@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Gelang Cantik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset dan gaya dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        /* Animasi Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: bounce 2s infinite;
+        }
+        
+        /* Navigasi */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            animation: slideInLeft 1.5s ease-in-out;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        nav a:hover {
+            background-color: #667eea;
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+        
+        /* Konten utama */
+        .container {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: slideInRight 2.5s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .hero button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 0.5s ease;
+        }
+        
+        /* Section Produk */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .product {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: 30%;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            animation: slideInLeft 3s ease-in-out;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            animation: bounce 0.5s ease;
+        }
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }
+        .product h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        .product p {
+            margin-bottom: 15px;
+        }
+        .product button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .product button:hover {
+            background: #764ba2;
+            animation: pulse 0.5s ease;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: slideInRight 3.5s ease-in-out;
+        }
+        .testimonial blockquote {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .testimonial cite {
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            animation: fadeIn 4s ease-in-out;
+        }
+        
+        /* Responsivitas */
+        @media (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product {
+                width: 80%;
+            }
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-gem"></i> Toko Gelang Cantik</h1>
+    </header>
+    
+    <nav>
+        <a href="#home"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#products"><i class="fas fa-shopping-bag"></i> Produk</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> Tentang</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Kontak</a>
+    </nav>
+    
+    <div class="container">
+        <section class="hero" id="home">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Koleksi Gelang Cantik">
+            <h1>Koleksi Gelang Terbaik</h1>
+            <p>Temukan gelang cantik dari bahan berkualitas tinggi, cocok untuk segala acara. Mulai dari Rp50.000!</p>
+            <button><i class="fas fa-shopping-cart"></i> Belanja Sekarang</button>
+        </section>
+        
+        <section class="products" id="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Gelang Emas">
+                <h3>Gelang Emas</h3>
+                <p>Gelang elegan dari emas 24k, cocok untuk pesta. Harga: Rp150.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Gelang Perak">
+                <h3>Gelang Perak</h3>
+                <p>Desain minimalis dengan bahan perak anti-karat. Harga: Rp80.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Gelang Manik">
+                <h3>Gelang Manik</h3>
+                <p>Gelang bohemian dengan manik-manik warna-warni. Harga: Rp50.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+        </section>
+        
+        <section class="testimonial">
+            <blockquote>"Gelang dari toko ini sangat cantik dan berkualitas tinggi. Saya suka sekali!"</blockquote>
+            <cite>- Pelanggan Puas</cite>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Toko Gelang Cantik. Dibuat dengan <i class="fas fa-heart" style="color: #ff6b6b;"></i> untuk kreativitas.</p>
+    </footer>
+</body>
+</html>
